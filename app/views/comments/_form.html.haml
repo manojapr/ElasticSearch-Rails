@@ -1,0 +1,6 @@
+#comment_form
+  = simple_form_for @comment, :remote => true do |f|
+    %ul
+      = f.input :content
+      = f.input :picture_id, :as => :hidden
+    = f.submit :class => 'submit'

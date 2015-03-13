@@ -1,0 +1,23 @@
+.refill
+  .refills-wrapper
+    .line-behind-text
+      %h6.er_toc_tag
+        = show_title(@picture)
+    .hero-copy
+      %h1 
+        = show_title(@picture)
+      %p 
+        = show_description(@picture)
+    #img
+      = image_tag @picture.picture_file.url(:large)
+
+
+    %p
+      = link_to 'Show Comments', display_picture_comments_comments_path(picture_id: @picture.id), id: 'comments_link', remote: true
+
+
+    = render 'comments/form'
+
+
+
+

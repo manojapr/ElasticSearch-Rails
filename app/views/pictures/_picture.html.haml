@@ -1,0 +1,10 @@
+=  content_tag_for(:div, picture, :class => 'card') do
+  
+  = link_to picture_path(picture) do
+    .card-image
+      - if picture.picture_file?
+        = image_tag picture.picture_file.url(:thumb)
+    .card-header
+      = show_title(picture)
+    .card-copy
+      = show_description(picture)

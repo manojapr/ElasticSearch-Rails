@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title MeetylDemo
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    %header.navigation
+      .menu-wrapper
+        %a.logo{href: "javascript:void(0)"}
+          %img{alt: "", src: "https://raw.github.com/Magnus-G/Random/master/placeholder_logo_1.png"}/
+        %p#js-mobile-menu.navigation-menu-button MENU
+        .nav
+          %ul#navigation-menu
+            %li.nav-link
+              = link_to "All Pictures", pictures_path
+            %li.nav-link
+              = link_to "New Picture", new_picture_path
+
+    = yield

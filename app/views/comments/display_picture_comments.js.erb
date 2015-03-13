@@ -1,0 +1,6 @@
+$('#comment_created').remove();
+$('#img').after('<h3>Comments</h3><ul id="comments_list"></ul>');
+$(<%= raw @comments %>).each(function(){
+  $('#comments_list').append('<li>' + this.content + '</li>');
+  })
+$('#comments_link').remove()
